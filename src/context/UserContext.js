@@ -1,11 +1,11 @@
 import React, { createContext, useEffect, useState } from "react";
 
-export const UserContextGlobaly = createContext();
+export const UserContext = createContext();
 
-export function UserContext({children}){
+export const UserProvider = ({children}) => {
     
     const [currentList, setCurrentlist] = useState([]);
-    const [logueado, setLogueado] = useState('Logueado');
+    const [logueado, setLogueado] = useState('');
     
     useEffect(()=>{
         fetch('https://randomuser.me/api/0.8/?results=100')
@@ -21,12 +21,12 @@ export function UserContext({children}){
     }
 
     return(
-        <UserContextGlobaly.Provider value={{
+        <UserContext.Provider value={{
                 currentList,
                 loginExitoso,
                 logueado
             }}>
             {children}
-        </UserContextGlobaly.Provider>
+        </UserContext.Provider>
     ) 
 }

@@ -1,10 +1,10 @@
 import React, { useContext, useState } from "react";
-import { UserContextGlobaly } from "../context/UserContext";
+import { UserContext } from "../context/UserContext";
 import NameFilter from "./NameFilter";
 
 function UserList(){
 
-    const {currentList} = useContext(UserContextGlobaly);
+    const {currentList} = useContext(UserContext);
 
     const [filtro, setFiltro] = useState('');
     const [valorFiltro, setValorFiltro] = useState('');

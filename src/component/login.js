@@ -1,18 +1,17 @@
 import React, { useContext } from "react";
 import { useForm } from 'react-hook-form';
 import { useNavigate } from "react-router-dom";
-import { UserContextGlobaly } from "../context/UserContext";
+import { UserContext } from "../context/UserContext";
 import '../style/login.css';
 
 function Login(){
 
 
-    const {loginExitoso, currentList, logueado} = useContext(UserContextGlobaly);
+    const {loginExitoso, currentList, logueado} = useContext(UserContext);
     const {register, handleSubmit} = useForm();
     const navigate = useNavigate();
 
     const enviar = (data) => {
-        console.log(currentList)
         currentList.results.map((usuario) => {
             if(usuario.user.username === data.user && usuario.user.password === data.password){
                 loginExitoso();
