@@ -1,0 +1,38 @@
+.contendor-usuario{
+    width: 500px;
+    height: 250px;
+    margin: 10px 10px 30px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+    background-color: #845454;
+    box-shadow: 0 3px 13px 1px rgb(0, 0, 0 / 9%);
+}
+
+.contenedor-imagen{
+    width: 20%;
+}
+
+.imagen-usuario{
+    padding: 10px;
+    height: 80%;
+    width: 80%;
+}
+
+.contenedor-texto{
+    width: 80%;
+    text-align: center;
+    padding: 5px;
+    font-family: Lato, sans-serif;
+    font-weight: 400;
+}
+
+.nombre{
+    font-size: 1.3rem;
+}
+
+.ubicacion{
+    font-size: 1.1rem;
+    text-align: justify;
+}

@@ -1,0 +1,26 @@
+.contenedor-titulo{
+    display: flex;
+    justify-content: center; /* centro horizontal */
+    align-items: center;     /* centro vertical */
+    gap: 20px;
+}
+
+@media (max-width: 768px) { /* para que se vuelva una columna al bajar los pixeles */
+  .contenedor-usuarios {
+    grid-template-columns: 1fr;
+  }
+}
+
+.titulo{
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    text-align: center;
+    font-family: Roboto, sans-serif;
+    font-weight: bold;
+    color: black;
+}
+
+.contenedor-usuarios {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
