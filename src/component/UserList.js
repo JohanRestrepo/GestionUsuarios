@@ -8,10 +8,10 @@ import Button from "./button";
 
 function UserList(){
 
-    const {currentList} = useContext(UserContext);
+    const {currentList, deleteUser} = useContext(UserContext);
 
-    const eliminarUsuario = username => {
-        console.log(username);
+    const eliminar = username => {
+        deleteUser(username);
     }
 
     return(
@@ -35,8 +35,8 @@ function UserList(){
                                     city={user.user.location.city}
                                     />
                                     <div className='contenedor-botones'>
-                                        <Button value={<FaEdit />} logic={'edit'} action={eliminarUsuario} id={user.user.username}/> 
-                                        <Button value={<FaRegTrashAlt />} logic={'delete'} action={eliminarUsuario} id={user.user.username}/> 
+                                        <Button value={<FaEdit />} logic={'edit'} action={eliminar} id={user.user.username}/> 
+                                        <Button value={<FaRegTrashAlt />} logic={'delete'} action={eliminar} id={user.user.username}/> 
                                     </div>
                                      
                                 </div>  

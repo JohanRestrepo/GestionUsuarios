@@ -22,11 +22,25 @@ export const UserProvider = ({children}) => {
         setToken(sha256);
     }
 
+    const deleteUser = (username) => {
+        
+        //prevData es un estado anterior que React inyecta automaticamente, previene errores
+        setCurrentlist(prevData => ({
+            ...prevData,
+            results: prevData.results.filter(
+                item => item.user.username !== username
+            )
+        }));
+
+        console.log(currentList);
+    }
+
     return(
         <UserContext.Provider value={{
                 currentList,
                 loginExitoso,
-                token
+                token,
+                deleteUser
             }}>
             {children}
         </UserContext.Provider>
