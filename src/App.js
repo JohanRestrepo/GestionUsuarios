@@ -5,7 +5,7 @@ import Login from './component/login';
 import PrivateRoute from './component/PrivateRoute';
 import UserList from './component/UserList';
 import { UserProvider} from './context/UserContext';
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
   
