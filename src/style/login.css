@@ -1,3 +1,28 @@
+body{
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.titulo-login{
+  font-size: 35px;
+  font-family: Roboto, sans-serif;
+  font-weight: bold;
+  color: white;
+}
+
+.contenedor-login{
+  height: 250px;
+  width: 500px;
+  background-color: rgb(58, 98, 157);
+  display: grid;
+  place-items: center;
+  border: 5px solid gray;
+  padding: 20px; 
+}
+
 .tarea-formulario{
   display: grid;
   grid-template-columns: 1fr;

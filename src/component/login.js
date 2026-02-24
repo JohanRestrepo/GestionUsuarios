@@ -25,7 +25,8 @@ function Login(){
     }
 
     return(
-        <div>
+        <div className="contenedor-login">
+            <h1 className="titulo-login">Login para usuarios</h1>
             <form className='tarea-formulario' onSubmit={handleSubmit(enviar)}>
                 <input className='tarea-input' type='text' placeholder="Ingresa el usuario" required {... register("user")}/>
                 <input className='tarea-input' type='text' placeholder="Ingresa la contraseña" required {... register("password")}/>
