@@ -24,3 +24,10 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
+
+.contenedor-botones {
+    display: flex;
+    justify-content: center; /* centro horizontal */
+    align-items: center;     /* centro vertical */
+    gap: 20px;
+}

@@ -12,9 +12,9 @@ function User(props){
             </div>
             <div className='contenedor-texto'>
                 <p className='nombre'><strong>{props.name} {props.lastname}</strong></p>
-                <p>Email: {props.email}</p>
-                <p>Cel: {props.cell}</p>
-                <p className='ubicacion'>ubicacion: {props.location} - {props.city}</p>
+                <p><strong>Email:</strong> {props.email}</p>
+                <p><strong>Cel:</strong> {props.cell}</p>
+                <p className='ubicacion'><strong>ubicacion:</strong> {props.location} - {props.city}</p>
             </div>
         </div>
     )

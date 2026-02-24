@@ -2,10 +2,17 @@ import React, { useContext} from "react";
 import { UserContext } from "../context/UserContext";
 import '../style/UserList.css';
 import User from "./User";
+import { FaRegTrashAlt } from "react-icons/fa";
+import { FaEdit } from "react-icons/fa";
+import Button from "./button";
 
 function UserList(){
 
     const {currentList} = useContext(UserContext);
+
+    const eliminarUsuario = username => {
+        console.log(username);
+    }
 
     return(
         <>
@@ -16,7 +23,8 @@ function UserList(){
                 {
                     currentList.results.map((user) => {
                             return (
-                                <User 
+                                <div>
+                                    <User 
                                     key={user.user.username}
                                     picture={user.user.picture.medium}
                                     name={user.user.name.first}
@@ -25,11 +33,19 @@ function UserList(){
                                     cell={user.user.cell}
                                     location={user.user.location.street}
                                     city={user.user.location.city}
-                                />         
+                                    />
+                                    <div className='contenedor-botones'>
+                                        <Button value={<FaEdit />} logic={'edit'} action={eliminarUsuario} id={user.user.username}/> 
+                                        <Button value={<FaRegTrashAlt />} logic={'delete'} action={eliminarUsuario} id={user.user.username}/> 
+                                    </div>
+                                     
+                                </div>  
                     )
                     })
                 }
+                
             </div>
+            
             
         </>     
     )
