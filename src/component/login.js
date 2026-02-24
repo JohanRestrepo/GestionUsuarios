@@ -6,22 +6,22 @@ import '../style/login.css';
 
 function Login(){
 
-
-    const {loginExitoso, currentList, logueado} = useContext(UserContext);
+    const {loginExitoso, currentList} = useContext(UserContext);
     const {register, handleSubmit} = useForm();
     const navigate = useNavigate();
 
     const enviar = (data) => {
-        currentList.results.map((usuario) => {
-            if(usuario.user.username === data.user && usuario.user.password === data.password){
-                loginExitoso();
-                return navigate('/bienvenida');
-            }
-        });
-        if(logueado !== 'Logueado'){
+        const usuarioEncontrado = currentList.results.find((usuario)=>
+            usuario.user.username === data.user &&
+            usuario.user.password === data.password
+        );
+        
+        if(usuarioEncontrado){
+            loginExitoso();
+            navigate('/bienvenida');
+        }else{
             alert("No hay ningun usuario con esa información en el sistema");
         }
-        
     }
 
     return(

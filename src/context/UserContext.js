@@ -11,6 +11,8 @@ export const UserProvider = ({children}) => {
         fetch('https://randomuser.me/api/0.8/?results=100')
             .then((resp) => resp.json())
             .then((data) => {
+            console.log('username: ' + data.results[0].user.username); //Esto lo hago para tener info con que loguearme
+            console.log('password: ' + data.results[0].user.password);
             setCurrentlist(data);
             })
     }, [])
