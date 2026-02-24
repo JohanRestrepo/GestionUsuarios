@@ -5,13 +5,19 @@ import User from "./User";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { FaEdit } from "react-icons/fa";
 import Button from "./button";
+import { useNavigate } from "react-router-dom";
 
 function UserList(){
 
     const {currentList, deleteUser} = useContext(UserContext);
+    const navigate = useNavigate();
 
     const eliminar = username => {
         deleteUser(username);
+    }
+
+    const editar = username => {
+        navigate(`/usuarios/edit/${username}`);
     }
 
     return(
@@ -35,7 +41,7 @@ function UserList(){
                                     city={user.user.location.city}
                                     />
                                     <div className='contenedor-botones'>
-                                        <Button value={<FaEdit />} logic={'edit'} action={eliminar} id={user.user.username}/> 
+                                        <Button value={<FaEdit />} logic={'edit'} action={editar} id={user.user.username}/> 
                                         <Button value={<FaRegTrashAlt />} logic={'delete'} action={eliminar} id={user.user.username}/> 
                                     </div>
                                      

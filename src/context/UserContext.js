@@ -18,7 +18,6 @@ export const UserProvider = ({children}) => {
     }, [])
 
     const loginExitoso = ({sha256}) => {
-        console.log("Se ha logueado con exito");
         setToken(sha256);
     }
 
@@ -31,8 +30,37 @@ export const UserProvider = ({children}) => {
                 item => item.user.username !== username
             )
         }));
+    }
 
-        console.log(currentList);
+    const modifyUser = (data) => {
+        
+        //Se hace asi la modificacion por las capas que trae, hay que especificar cada capa
+
+        setCurrentlist(prevData => ({
+            ...prevData,
+            results: prevData.results.map(item =>
+                item.user.username === data.username
+                ?{
+                    ...item,
+                    user: {
+                        ...item.user,
+                        email: data.email,
+                        cell: data.cel,
+                        name: {
+                            ...item.user.name,
+                            first: data.name,
+                            last: data.lastname
+                        },
+                        location: {
+                            ...item.user.location,
+                            street: data.ubicacion,
+                            city: data.ciudad
+                        }
+                    }
+                }
+                : item
+            )
+        }));
     }
 
     return(
@@ -40,7 +68,8 @@ export const UserProvider = ({children}) => {
                 currentList,
                 loginExitoso,
                 token,
-                deleteUser
+                deleteUser,
+                modifyUser
             }}>
             {children}
         </UserContext.Provider>

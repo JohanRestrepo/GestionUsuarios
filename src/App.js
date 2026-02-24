@@ -1,6 +1,7 @@
 
 
 import Bienvenida from './component/Bienvenida';
+import EditUser from './component/EditUser';
 import Login from './component/login';
 import PrivateRoute from './component/PrivateRoute';
 import UserList from './component/UserList';
@@ -17,6 +18,7 @@ function App() {
           <Route path='/login' element= {<Login />}/>
           <Route path='/bienvenida' element= {<PrivateRoute><Bienvenida /></PrivateRoute>}/>
           <Route path='/usuarios' element= {<PrivateRoute><UserList /></PrivateRoute>}/>
+          <Route path='/usuarios/edit/:id' element= {<PrivateRoute><EditUser /></PrivateRoute>}/>
         </Routes>
       </BrowserRouter>
     </UserProvider>
