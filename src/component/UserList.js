@@ -1,6 +1,7 @@
 import React, { useContext} from "react";
 import { UserContext } from "../context/UserContext";
 import '../style/UserList.css';
+import User from "./User";
 
 function UserList(){
 
@@ -13,14 +14,18 @@ function UserList(){
             {
                     currentList.results.map((user) => {
                             return (
-                                <div key={user.user.username}>
-                                    <img src={user.user.picture.medium} alt={user.user.name.first}></img>
-                                    <h1>{user.user.name.first}</h1>
-                                    <p>{user.user.email}</p>
-                                    <p>{user.user.cell}</p>
-                                    <p>ubicacion: {user.user.location.street} - {user.user.location.city}</p>
-                                </div>
-                            )
+                                <User 
+                                    key={user.user.username}
+                                    picture={user.user.picture.medium}
+                                    name={user.user.name.first}
+                                    email={user.user.email}
+                                    cell={user.user.cell}
+                                    location={user.user.location.street}
+                                    city={user.user.location.city}
+                                />
+
+                                
+                    )
                 })
             }
         </div>     
