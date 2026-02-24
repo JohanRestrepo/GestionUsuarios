@@ -17,7 +17,7 @@ function Login(){
         );
         
         if(usuarioEncontrado){
-            loginExitoso();
+            loginExitoso(usuarioEncontrado.user.sha256);
             navigate('/bienvenida');
         }else{
             alert("No hay ningun usuario con esa información en el sistema");
@@ -29,7 +29,7 @@ function Login(){
             <h1 className="titulo-login">Login para usuarios</h1>
             <form className='tarea-formulario' onSubmit={handleSubmit(enviar)}>
                 <input className='tarea-input' type='text' placeholder="Ingresa el usuario" required {... register("user")}/>
-                <input className='tarea-input' type='text' placeholder="Ingresa la contraseña" required {... register("password")}/>
+                <input className='tarea-input' type='password' placeholder="Ingresa la contraseña" required {... register("password")}/>
                 <button className='tarea-boton' type="submit">Login</button>
             </form>
         </div>

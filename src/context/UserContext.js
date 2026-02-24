@@ -5,7 +5,7 @@ export const UserContext = createContext();
 export const UserProvider = ({children}) => {
     
     const [currentList, setCurrentlist] = useState([]);
-    const [logueado, setLogueado] = useState('');
+    const [token, setToken] = useState('');
     
     useEffect(()=>{
         fetch('https://randomuser.me/api/0.8/?results=100')
@@ -17,16 +17,16 @@ export const UserProvider = ({children}) => {
             })
     }, [])
 
-    const loginExitoso = () => {
+    const loginExitoso = ({sha256}) => {
         console.log("Se ha logueado con exito");
-        setLogueado('Logueado');
+        setToken(sha256);
     }
 
     return(
         <UserContext.Provider value={{
                 currentList,
                 loginExitoso,
-                logueado
+                token
             }}>
             {children}
         </UserContext.Provider>
