@@ -1,0 +1,78 @@
+.pagina-filtro{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenedor-filtro{
+  display: grid;
+  grid-template-columns: 3fr;
+  width: 100%;
+  background-color: rgb(58, 98, 157);
+  padding: 5px; 
+}
+
+.formulario-filtro{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.filtro {
+  width: 10%;
+  font-size: 18px;
+  background-color: white;
+  padding: 14px 32px 14px 16px;
+  border-radius: 4px 0 0 4px;
+  border: 2px solid #00471b;
+  outline: none;
+  margin: 2px;
+}
+
+.input-filtro {
+  width: 50%;
+  font-size: 18px;
+  background-color: white;
+  padding: 14px 32px 14px 16px;
+  border-radius: 4px 0 0 4px;
+  border: 2px solid #00471b;
+  outline: none;
+  margin: 2px;
+}
+
+.boton-filtro {
+  width: 10%;
+  padding: 16px;
+  font-size: 18px;
+  font-family: Roboto, sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  outline: none;
+  background-color: #15349c;
+  color: white;
+  text-transform: capitalize;
+  margin: 5px;
+}
+
+.boton-borrar-filtro {
+  width: 8%;
+  padding: 16px;
+  font-size: 18px;
+  font-family: Roboto, sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  outline: none;
+  background-color: #c33848;
+  color: white;
+  text-transform: capitalize;
+  margin: 5px;
+}
